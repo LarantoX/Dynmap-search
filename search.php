@@ -2,6 +2,7 @@
 $name = array();
 $x = array();
 $z = array();
+$icon = array();
 $i=-1;
 if(isset($_POST['submit'])){
   $world = $_POST['world'];
@@ -44,6 +45,7 @@ if(isset($_POST['submit'])){
       array_push($name,$obj->sets->$set->markers->$marker->label);
       array_push($x,$obj->sets->$set->markers->$marker->x);
       array_push($z,$obj->sets->$set->markers->$marker->z);
+      array_push($icon,$obj->sets->$set->markers->$marker->icon);
       }
     }
   }

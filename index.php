@@ -8,6 +8,17 @@
         <link rel="stylesheet" href="material-design.css" type="text/css"/>
         <link rel="stylesheet" href="style.css" type="text/css"/>
         <script src="material.min.js"></script>
+        <link rel="icon" href="favicon.ico" type="image/gif" sizes="16x16"> 
+        <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-71315969-1', 'auto');
+        ga('send', 'pageview');
+
+        </script>
     </head>
     <body>
         <h1>Vyhledávání v dynmapě</h1>
@@ -31,6 +42,7 @@
         <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
             <thead  class="mdl-data-table__cell--non-numeric">
                 <tr>
+                    <th></th>
                     <th>Název</th>
                     <th>Souřadnice X</th>
                     <th>Souřadnice Z</th>
@@ -39,6 +51,7 @@
             <tbody>
                 <?php foreach($name as $n): $i++;?>
                 <tr onclick="document.location = '<?= "http://map.majncraft.cz/?worldname=$world&mapname=surface&zoom=8&x=$x[$i]&y=64&z=$z[$i]"?>';">
+                    <td><img src="http://map.majncraft.cz/tiles/_markers_/<?=$icon[$i]?>.png" alt="<?=$icon[$i]?>"></td>
                     <td><?=$name[$i]?></td>
                     <td><?=$x[$i]?></td>
                     <td><?=$z[$i]?></td>
@@ -48,3 +61,4 @@
         </table>
     </body>
 </html>
+<!--<endora>-->
