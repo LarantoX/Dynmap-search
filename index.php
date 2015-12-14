@@ -22,23 +22,31 @@
     </head>
     <body>
         <h1>Vyhledávání v dynmapě</h1>
+        <?php
+          if(!empty($closest)){
+            echo "<div class='information'>\r\n";
+            echo "Pro <b>$search</b> nic nenalezeno. Nehledali jste <b>$closest</b>?\r\n";
+            echo "</div>";
+          }
+        ?>
         <form method="post" class="search-box">
             <div class="mdl-selectfield">
             <label for="world">Svět</label>
             <select name="world" name="world">
-                <option value="novus">Novus | Overworld</option>
-                <option value="novus_nether">Novus | Nether</option>
-                <option value="world">Eternia | Overworld</option>
-                <option value="world_nether">Eternia | Nether Reloaded</option>
-                <option value="world_space">Vesmír | Space</option>
+                <option value="novus" <?php if($world_id==0) echo 'selected'?>>Novus | Overworld</option>
+                <option value="novus_nether" <?php if($world_id==1) echo 'selected'?>>Novus | Nether</option>
+                <option value="world" <?php if($world_id==2) echo 'selected'?>>Eternia | Overworld</option>
+                <option value="world_nether" <?php if($world_id==3) echo 'selected'?>>Eternia | Nether Reloaded</option>
+                <option value="world_space" <?php if($world_id==4) echo 'selected'?>>Vesmír | Space</option>
             </select>
             </div>
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-              <input class="mdl-textfield__input" type="text" id="search" name="search">
-              <label class="mdl-textfield__label" for="search" required>Hledat...</label>
+              <input class="mdl-textfield__input" type="text" id="search" name="search" value="<?php if(!empty($closest))echo $closest?>">
+              <label class="mdl-textfield__label" for="search">Hledat...</label>
             </div>
             <input class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" type="submit" name="submit" value="Vyhledat v mapě">
         </form>
+        <?php if(!empty($name)){ ?>
         <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
             <thead  class="mdl-data-table__cell--non-numeric">
                 <tr>
@@ -59,6 +67,7 @@
                 <?php endforeach;?>
              </tbody>
         </table>
+        <?php } ?>
     </body>
 </html>
 <!--<endora>-->
