@@ -21,18 +21,23 @@ if(isset($_POST['submit'])){
     switch ($world) {
       case "novus":
         $json_location .= "marker_novus.json";
+        $world_id = 0;
         break;
       case "novus_nether":
         $json_location .= "marker_novus_nether.json";
+        $world_id = 1;
         break;
       case "world":
         $json_location .= "marker_world.json";
+        $world_id = 2;
         break;
       case "world_nether":
         $json_location .= "marker_world_nether.json";
+        $world_id = 3;
         break;
       case "world_space":
         $json_location .= "marker_world_space.json";
+        $world_id = 4;
         break;
       default:
         $json_location .= "marker_novus.json";
