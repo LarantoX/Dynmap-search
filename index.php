@@ -33,11 +33,11 @@
             <div class="mdl-selectfield">
             <label for="world">Svět</label>
             <select name="world" name="world">
-                <option value="novus" <?php if($world_id==0) echo 'selected'?>>Novus | Overworld</option>
-                <option value="novus_nether" <?php if($world_id==1) echo 'selected'?>>Novus | Nether</option>
-                <option value="world" <?php if($world_id==2) echo 'selected'?>>Eternia | Overworld</option>
-                <option value="world_nether" <?php if($world_id==3) echo 'selected'?>>Eternia | Nether Reloaded</option>
-                <option value="world_space" <?php if($world_id==4) echo 'selected'?>>Vesmír | Space</option>
+                <option value="novus" <?php if($world=="novus") echo 'selected'?>>Novus | Overworld</option>
+                <option value="novus_nether" <?php if($world=="novus_nether") echo 'selected'?>>Novus | Nether</option>
+                <option value="world" <?php if($world=="world") echo 'selected'?>>Eternia | Overworld</option>
+                <option value="world_nether" <?php if($world_id=="world_nether") echo 'selected'?>>Eternia | Nether Reloaded</option>
+                <option value="world_space" <?php if($world_id=="world_space") echo 'selected'?>>Vesmír | Space</option>
             </select>
             </div>
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
