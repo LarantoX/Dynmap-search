@@ -15,9 +15,9 @@ select {
   width: 100%;
   padding: 4px 0;
   font-size: 16px;
-  color: rgba(0,0,0, 0.26);
+  color: #555;
   border: none;
-  border-bottom: 1px solid rgba(0,0,0, 0.12);
+  border-bottom: 1px solid rgba(0,0,0, 0.4);
 }
 
 /* Remove focus */
@@ -52,7 +52,7 @@ select:focus {
   content: '';
   border-left: .25em solid transparent;
   border-right: .25em solid transparent;
-  border-top: 0.375em solid rgba(0,0,0, 0.12);
+  border-top: 0.375em solid rgba(0,0,0, 0.4);
   pointer-events: none;
 }
 body {
@@ -61,3 +61,9 @@ body {
 
 h1{text-align: center;font-size:30pt;}
 .information{text-align: center;}
+#suggestion-box table{
+table-layout: fixed;
+display:block;max-height:300px; overflow-x: hidden;overflow-y: scroll;
+}
+#suggestion-box td{width:200px;}
+.table-left{text-align: left !important}

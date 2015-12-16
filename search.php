@@ -11,7 +11,7 @@ $labels = array();
 
 if(isset($_POST['submit'])){
   $world = $_POST['world'];
-  $search = $_POST['search'];
+  $search = mb_strtolower($_POST['search']);
   $json_location = "http://map.majncraft.cz/tiles/_markers_/";
   
   $haystack = array();
